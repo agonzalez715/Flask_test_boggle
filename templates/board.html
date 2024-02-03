@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boggle Game</title>
+</head>
+<body>
+    <h1>Boggle Game</h1>
+    <div class="board">
+        {% for row in board %}
+            <div class="row">
+                {% for letter in row %}
+                    <span class="cell">{{ letter }}</span>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <form id="guessForm">
+        <input type="text" name="guess" placeholder="Enter your guess">
+        <button type="submit">Submit</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
